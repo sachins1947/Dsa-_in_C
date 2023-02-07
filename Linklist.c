@@ -28,4 +28,5 @@ four = (struct Node*)malloc(sizeof(struct  Node));
   four->data =23;
   four->next = NULL;
 Linklist_traversa(head);
+printf("\n");
 }
