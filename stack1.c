@@ -4,8 +4,7 @@
 int stack[stacksize];
 int top = -1;
 int item;
-void push()
-{
+void push(){
 
 	if (top == stacksize - 1)
 	{
