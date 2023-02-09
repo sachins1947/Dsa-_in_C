@@ -3,45 +3,32 @@
 #define stacksize 5
 int stack[stacksize];
 int top = -1;
+int item;
 void push()
 {
-	int item, n;
+
 	if (top == stacksize - 1)
 	{
 		printf("stack overflow");
 		return;
 	}
-	
-		printf("Enter the number of element ");
-		scanf("%d", &n);
 		printf("enter the element in the stack");
-		for (int i = 0; i < n; i++)
-		{
 			scanf("%d", &item);
 			stack[++top] = item;
-		}
-	
-	
 }
 
 void pop()
 {
-	int item, a;
+	
 	if (top == -1)
 	{
 		printf("stack underflow");
 		return;
 	}
-	else
-	{
-		printf("enter the no of element to delete");
-		scanf("%d", &a);
-		for (int j = 0; j < a; j++)
-		{
-
-			printf("the deleted element %d\n", stack[top--]);
-		}
-	}
+	
+		item = stack[top--];
+			printf("the deleted element %d\n",item);
+	
 }
 void display()
 {
