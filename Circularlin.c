@@ -19,13 +19,17 @@ struct Node *insertaTFIRST(struct Node *head, int data)
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     ptr->data = data;
+    ptr->next = ptr;
+     if(head==NULL)
+     return  ptr;
     struct Node *p = head;
     while (p->next != head)
     {
         p = p->next;
     }
+    struct Node *cur = p->next;
     p->next = ptr;
-    ptr->next = head;
+    ptr->next = cur;
     head = ptr;
     return head;
 }
@@ -86,7 +90,7 @@ void main()
     four->next = head;
     printf("before insertion\n");
     Linklist_traversa(head);
-    head = insertafternode(head, 34,four);
+    head = insertaTFIRST(head,1);
 
     // head = insertinbetween(head,65,3);
     printf("After Insertion\n");

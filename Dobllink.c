@@ -143,6 +143,6 @@ void main(){
    four->next = NULL;
       travers(first);
       printf("\n");
-   first = deleteanodegivenvalue(10,first);
+   first = insertatfirst(10,first);
        travers(first);
 }

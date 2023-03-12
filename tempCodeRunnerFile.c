@@ -1,2 +1,2 @@
 
-      struct Node *tem = head;
+           if(item == root->data)

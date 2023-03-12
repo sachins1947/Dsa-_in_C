@@ -27,11 +27,15 @@ struct Node *conca(struct Node *firstlist, struct Node *secondlist)
 {
   struct Node *p = firstlist;
   struct Node *q = secondlist;
+    if(p==NULL)
+    return secondlist;
+    if(q==NULL)
+    return firstlist;
   while (p->next != NULL)
   {
     p = p->next;
   }
-  p->next = secondlist;
+  p->next = q;
   return firstlist;
 }
 struct Node *reverselink(struct Node *head)
@@ -125,6 +129,8 @@ void main()
   second = (struct Node *)malloc(sizeof(struct Node));
   third = (struct Node *)malloc(sizeof(struct Node));
   four = (struct Node *)malloc(sizeof(struct Node));
+  struct Node *five = (struct Node *)malloc(sizeof(struct Node));
+ struct Node * six = (struct Node *)malloc(sizeof(struct Node));
   head->data = 4;
   head->next = second;
   second->data = 5;
@@ -133,9 +139,14 @@ void main()
   third->next = four;
   four->data = 23;
   four->next = NULL;
+  five->data = 3;
+  five->next = six;
+  six->data = 9;
+  six->next =NULL;
+
 
   Linklist_traversa(head);
-  head = insertatspecificpos(head, 8, 15);
+  head = conca(NULL,five);
   printf("\n");
   Linklist_traversa(head);
 }
